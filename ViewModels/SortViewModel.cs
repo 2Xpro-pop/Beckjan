@@ -26,6 +26,11 @@ public abstract class SortViewModel : PageViewModel
                              .ToArray();
             SortHistory.Clear();
             SortArray(array);
+            SortHistory.Add(new()
+            {
+                Step = SortHistory.Count + 1,
+                Message = $"Final array {string.Join(",",array)}"
+            });
         });
     }
 
